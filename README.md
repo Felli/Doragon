@@ -1,2 +1,12 @@
-# Doragon-Skin
-A new outlook on esoTalk skin.
+## Doragon Skin
+
+Working on the skin as we speak!
+
+### Skin Information:
+ - **Name:** Flatty
+ - **Description:** A new outlook on esoTalk skin.
+ - **Version:** v0.1 beta
+ - **Author:** Felli
+ - **Contact:** felli-sama@asia.com
+ - **Website:** http://shiromarugames.ga/
+ - **License:** GPLv2
