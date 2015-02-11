@@ -3,7 +3,7 @@
 Working on the skin as we speak!
 
 ### Skin Information:
- - **Name:** Flatty
+ - **Name:** Doragon Skin
  - **Description:** A new outlook on esoTalk skin.
  - **Version:** v0.1 beta
  - **Author:** Felli
