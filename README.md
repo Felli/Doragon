@@ -2,6 +2,9 @@
 
 Working on the skin as we speak!
 
+How to install
+Upload to your >forums directory>addons>skins
+
 ### Skin Information:
  - **Name:** Doragon Skin
  - **Description:** A new outlook on esoTalk skin.
