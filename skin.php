@@ -31,6 +31,7 @@ class ETSkin_Doragon extends ETSkin {
  */
 public function handler_init($sender)
 {
+        $sender->addToHead("<link rel='shortcut icon' href='".getWebPath($this->resource("favicon.ico"))."'>");
 	$sender->addCSSFile((C("esoTalk.https") ? "https" : "http")."://fonts.googleapis.com/css?family=Open+Sans:400,600");
 	$sender->addCSSFile("core/skin/base.css", true);
 	$sender->addCSSFile("core/skin/font-awesome.css", true);
