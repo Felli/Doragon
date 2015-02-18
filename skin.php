@@ -20,7 +20,7 @@ ET::$skinInfo["Doragon"] = array(
 	"license" => "GPLv2"
 );
 
-class ETSkin_Doragon extends ETSkin {
+class ETSkin_DoragonSkin extends ETSkin {
 
 
 /**
@@ -46,7 +46,7 @@ public function handler_init($sender)
 
 	$sender->addCSSFile("config/colors.css", true);
 
-	if (!C("skin.Default.primaryColor")) $this->writeColors("#364159");
+	if (!C("skin.DoragonSkin.primaryColor")) $this->writeColors("#364159");
 }
 
 
@@ -58,7 +58,7 @@ public function handler_init($sender)
  */
 protected function writeColors($primary)
 {
-	ET::writeConfig(array("skin.Default.primaryColor" => $primary));
+	ET::writeConfig(array("skin.DoragonSkin.primaryColor" => $primary));
 
 	$rgb = colorUnpack($primary, true);
 	$hsl = rgb2hsl($rgb);
@@ -87,7 +87,7 @@ public function settings($sender)
 	// Set up the settings form.
 	$form = ETFactory::make("form");
 	$form->action = URL("admin/appearance");
-	$form->setValue("primaryColor", C("skin.Default.primaryColor"));
+	$form->setValue("primaryColor", C("skin.DoragonSkin.primaryColor"));
 
 	// If the form was submitted...
 	if ($form->validPostBack("save")) {
