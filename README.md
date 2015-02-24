@@ -10,7 +10,7 @@ Upload to your >forums directory>addons>skins
  - **Name:** Doragon Skin
  - **Description:** A new outlook on esoTalk skin.
  - **Version:** v0.1 beta
- - **Author:** Felli
+ - **Author:** Felli & Demynnfire (And whoever else joins in to make this skin!)
  - **Contact:** felli-sama@asia.com
  - **Website:** http://shiromarugames.ga/
  - **License:** GPLv2
