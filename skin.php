@@ -16,7 +16,7 @@ ET::$skinInfo["Doragon"] = array(
 	"version" => "v0.1 beta",
 	"author" => "Felli",
 	"authorEmail" => "felli-sama@asia.com",
-	"authorURL" => "http://shiromarugames.ga/",
+	"authorURL" => "http://esotalk.org/forum/member/2113-felli/",
 	"license" => "GPLv2"
 );
 
