@@ -12,5 +12,5 @@ Upload to your >forums directory>addons>skins
  - **Version:** v0.1 beta
  - **Author:** Felli & Demynnfire (And whoever else joins in to make this skin!)
  - **Contact:** felli-sama@asia.com
- - **Website:** http://shiromarugames.ga/
+ - **Website:** http://esotalk.org/forum/member/2113-felli/
  - **License:** GPLv2
