@@ -14,3 +14,5 @@ Upload to your >forums directory>addons>skins
  - **Contact:** felli-sama@asia.com
  - **Website:** http://esotalk.org/forum/member/2113-felli/
  - **License:** GPLv2
+
+NOTICE: DO NOT USE AS OF RIGHT NOW, STILL UNDER DEVELOPMENT!
