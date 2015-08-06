@@ -1,9 +1,10 @@
 ## Doragon Skin
 
-Working on the skin as we speak!
-EDIT: Project will be put on hold till I find someone with better CSS coding experience than I have.
+Working on the skin as we speak! This skin is based on the already created skin by [Demynnfire](https://github.com/Demynnfire/Flatty-esoTalk-Skin) and with his permission I'll be working on Doragon with Flatty as a backbone.
 
-How to install
+NOTICE: DO NOT USE AS OF RIGHT NOW, STILL UNDER DEVELOPMENT!
+
+# How to install
 Upload to your >forums directory>addons>skins
 
 ### Skin Information:
@@ -14,5 +15,3 @@ Upload to your >forums directory>addons>skins
  - **Contact:** felli-sama@asia.com
  - **Website:** http://esotalk.org/forum/member/2113-felli/
  - **License:** GPLv2
-
-NOTICE: DO NOT USE AS OF RIGHT NOW, STILL UNDER DEVELOPMENT!
