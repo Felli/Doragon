@@ -1,28 +1,21 @@
 <?php
-// Copyright 2011 Toby Zerner, Simon Zerner
-// This file is part of esoTalk. Please see the included license file for usage information.
 
 if (!defined("IN_ESOTALK")) exit;
-
 /**
- * Default skin file.
+ * Doragon skin file.
  * 
  * @package esoTalk
  */
-
 ET::$skinInfo["Doragon"] = array(
 	"name" => "Doragon",
-	"description" => "A new outlook on esoTalk skin.",
-	"version" => "v0.1 beta",
+	"description" => "A flat theme skin basedon the Flatty theme skin.",
+	"version" => "v0.3",
 	"author" => "Felli",
 	"authorEmail" => "felli-sama@asia.com",
-	"authorURL" => "http://esotalk.org/forum/member/2113-felli/",
+	"authorURL" => "N/A",
 	"license" => "GPLv2"
 );
-
-class ETSkin_DoragonSkin extends ETSkin {
-
-
+class ETSkin_Doragon extends ETSkin {
 /**
  * Initialize the skin.
  * 
@@ -31,25 +24,19 @@ class ETSkin_DoragonSkin extends ETSkin {
  */
 public function handler_init($sender)
 {
-        $sender->addToHead("<link rel='shortcut icon' href='".getWebPath($this->resource("favicon.ico"))."'>");
-	$sender->addCSSFile((C("esoTalk.https") ? "https" : "http")."://fonts.googleapis.com/css?family=Open+Sans:400,600");
+	$sender->addCSSFile((C("esoTalk.https") ? "https" : "http")."://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto|TitilliumWeb");
 	$sender->addCSSFile("core/skin/base.css", true);
 	$sender->addCSSFile("core/skin/font-awesome.css", true);
 	$sender->addCSSFile($this->resource("styles.css"), true);
-
 	// If we're viewing from a mobile browser, add the mobile CSS and change the master view.
 	if ($isMobile = isMobileBrowser()) {
 		$sender->addCSSFile($this->resource("mobile.css"), true);
 		$sender->masterView = "mobile.master";
 		$sender->addToHead("<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>");
 	}
-
 	$sender->addCSSFile("config/colors.css", true);
-
-	if (!C("skin.DoragonSkin.primaryColor")) $this->writeColors("#364159");
+	if (!C("skin.Default.primaryColor")) $this->writeColors("#364159");
 }
-
-
 /**
  * Write the skin's color configuration and CSS.
  * 
@@ -58,23 +45,17 @@ public function handler_init($sender)
  */
 protected function writeColors($primary)
 {
-	ET::writeConfig(array("skin.DoragonSkin.primaryColor" => $primary));
-
+	ET::writeConfig(array("skin.Flatty.primaryColor" => $primary));
 	$rgb = colorUnpack($primary, true);
 	$hsl = rgb2hsl($rgb);
-
 	$primary = colorPack(hsl2rgb($hsl), true);
-
 	$hsl[1] = max(0, $hsl[1] - 0.3);
 	$secondary = colorPack(hsl2rgb(array(2 => 0.6) + $hsl), true);
 	$tertiary = colorPack(hsl2rgb(array(2 => 0.92) + $hsl), true);
-
 	$css = file_get_contents($this->resource("colors.css"));
 	$css = str_replace(array("{primary}", "{secondary}", "{tertiary}"), array($primary, $secondary, $tertiary), $css);
 	file_put_contents(PATH_CONFIG."/colors.css", $css);
 }
-
-
 /**
  * Construct and process the settings form for this skin, and return the path to the view that should be 
  * rendered.
@@ -87,20 +68,14 @@ public function settings($sender)
 	// Set up the settings form.
 	$form = ETFactory::make("form");
 	$form->action = URL("admin/appearance");
-	$form->setValue("primaryColor", C("skin.DoragonSkin.primaryColor"));
-
+	$form->setValue("primaryColor", C("skin.Flatty.primaryColor"));
 	// If the form was submitted...
 	if ($form->validPostBack("save")) {
 		$this->writeColors($form->getValue("primaryColor"));
-
 		$sender->message(T("message.changesSaved"), "success autoDismiss");
 		$sender->redirect(URL("admin/appearance"));
 	}
-
 	$sender->data("skinSettingsForm", $form);
 	$sender->addJSFile("core/js/lib/farbtastic.js");
 	return $this->view("settings");
-}
-
-
 }
