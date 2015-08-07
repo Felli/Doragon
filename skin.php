@@ -1,18 +1,19 @@
 <?php
-
+// Copyright 2011 Toby Zerner, Simon Zerner
+// This file is part of esoTalk. Please see the included license file for usage information.
 if (!defined("IN_ESOTALK")) exit;
 /**
- * Doragon skin file.
+ * Default skin file.
  * 
  * @package esoTalk
  */
 ET::$skinInfo["Doragon"] = array(
 	"name" => "Doragon",
-	"description" => "A flat theme skin basedon the Flatty theme skin.",
+	"description" => "A flat theme skin that is based on Flatty.",
 	"version" => "v0.3",
 	"author" => "Felli",
 	"authorEmail" => "felli-sama@asia.com",
-	"authorURL" => "N/A",
+	"authorURL" => "http://yuriqueen.ga/blog/",
 	"license" => "GPLv2"
 );
 class ETSkin_Doragon extends ETSkin {
@@ -24,6 +25,7 @@ class ETSkin_Doragon extends ETSkin {
  */
 public function handler_init($sender)
 {
+	$sender->addToHead("<link rel='shortcut icon' href='".getWebPath($this->resource("favicon.ico"))."'>");
 	$sender->addCSSFile((C("esoTalk.https") ? "https" : "http")."://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto|TitilliumWeb");
 	$sender->addCSSFile("core/skin/base.css", true);
 	$sender->addCSSFile("core/skin/font-awesome.css", true);
@@ -35,7 +37,7 @@ public function handler_init($sender)
 		$sender->addToHead("<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>");
 	}
 	$sender->addCSSFile("config/colors.css", true);
-	if (!C("skin.Default.primaryColor")) $this->writeColors("#364159");
+	if (!C("skin.Doragon.primaryColor")) $this->writeColors("#364159");
 }
 /**
  * Write the skin's color configuration and CSS.
@@ -45,7 +47,7 @@ public function handler_init($sender)
  */
 protected function writeColors($primary)
 {
-	ET::writeConfig(array("skin.Flatty.primaryColor" => $primary));
+	ET::writeConfig(array("skin.Doragon.primaryColor" => $primary));
 	$rgb = colorUnpack($primary, true);
 	$hsl = rgb2hsl($rgb);
 	$primary = colorPack(hsl2rgb($hsl), true);
@@ -68,7 +70,7 @@ public function settings($sender)
 	// Set up the settings form.
 	$form = ETFactory::make("form");
 	$form->action = URL("admin/appearance");
-	$form->setValue("primaryColor", C("skin.Flatty.primaryColor"));
+	$form->setValue("primaryColor", C("skin.Doragon.primaryColor"));
 	// If the form was submitted...
 	if ($form->validPostBack("save")) {
 		$this->writeColors($form->getValue("primaryColor"));
@@ -78,4 +80,5 @@ public function settings($sender)
 	$sender->data("skinSettingsForm", $form);
 	$sender->addJSFile("core/js/lib/farbtastic.js");
 	return $this->view("settings");
+}
 }
