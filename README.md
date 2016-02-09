@@ -5,7 +5,8 @@ Working on the skin as we speak! This skin is based on the already created skin 
 NOTICE: DO NOT USE AS OF RIGHT NOW, STILL UNDER DEVELOPMENT!
 
 # How to install
-Upload to your >forums directory>addons>skins
+1. Upload to your >forums directory>addons>skins
+2. Rename skin folder to Doragon
 
 ### Skin Information:
  - **Name:** Doragon Skin
