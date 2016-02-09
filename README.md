@@ -9,7 +9,7 @@ NOTICE: DO NOT USE AS OF RIGHT NOW, STILL UNDER DEVELOPMENT!
 2. Rename skin folder to Doragon
 
 ### Skin Information:
- - **Name:** Doragon Skin
+ - **Name:** Doragon
  - **Description:** A new outlook on esoTalk skin.
  - **Version:** v0.1 beta
  - **Author:** Felli & Demynnfire (And whoever else joins in to make this skin!)
